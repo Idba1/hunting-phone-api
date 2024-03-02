@@ -9,12 +9,16 @@ const loadPhone = async (searchText) => {
 
 
 const displayPhones = phones => {
-    // console.log(phones);
+    console.log(phones);
 
     // 1:get container
     const phoneContainer = document.getElementById('phone-container');
     // clear phone container cards before adding new cards
     phoneContainer.textContent = "";
+
+    // console.log(phones.length);
+    // display only first 12 phone
+    phones = phones.slice(0,12);
 
     phones.forEach(phone => {
         console.log(phone);
@@ -47,6 +51,12 @@ const handleSearch = () => {
     const searchField = document.getElementById('search-fild');
     const searchText = searchField.value;
     console.log(searchText);
+    loadPhone(searchText)
+}
+
+const handleSearch2 = () => {
+    const searchField = document.getElementById('search-fild2');
+    const searchText = searchField.value;
     loadPhone(searchText)
 }
 
